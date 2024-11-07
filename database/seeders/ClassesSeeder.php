@@ -21,7 +21,7 @@ class ClassesSeeder extends Seeder
             ->sequence(fn($sequence) => ['name' => 'Class ' . $sequence->index + 1])
             ->has(
                 Section::factory()
-                    ->count(2)
+                    ->count(1)
                     ->state(
                         new Sequence(
                             [ 'name' => 'Section A' ],
@@ -30,7 +30,7 @@ class ClassesSeeder extends Seeder
                     )
                     ->has(
                         Student::factory()
-                            ->count(5)
+                            ->count(2)
                             ->state(
                                 fn(array $attributes, Section $section) => ['class_id' => $section->class_id]
                             )
